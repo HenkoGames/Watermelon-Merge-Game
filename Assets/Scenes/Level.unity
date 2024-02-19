@@ -153,12 +153,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fruits:
-  - {fileID: 5748775937963596998, guid: 13fc421f3b3370b498082b9321ab01d8, type: 3}
-  - {fileID: 4956075791501642355, guid: 79de6bb6d4e207b458c5c7727b1fed7e, type: 3}
-  - {fileID: 4350708257911751088, guid: d0271856f4ff4d84cbdf77be8bd85986, type: 3}
-  - {fileID: 1954883930405288016, guid: 4b1bc76bc28acdd44a1e960bc7688065, type: 3}
-  - {fileID: 5357080449782042120, guid: ae731a7a1b64140449acb7caafdc4ae4, type: 3}
-  - {fileID: 1983053317166516038, guid: 886ab6927e3ecf641aa46bc42f8f74af, type: 3}
+  - {fileID: 1641550745885298480, guid: ce1e07f37abfce742812827027dc53ec, type: 3}
+  - {fileID: 5067725939334120130, guid: edefe393c18c79e49a8169c7e4a2518d, type: 3}
+  - {fileID: 9175884719704517893, guid: 85aae2ce00630f246a7a26e4ebacf514, type: 3}
+  - {fileID: 7033522750244060586, guid: 6f8685be357e12641913633ea3af5583, type: 3}
+  - {fileID: 6125468931650144265, guid: 7c7cf2c29f1cf524cbd0bdc98abe93e0, type: 3}
+  - {fileID: 1120139423831485421, guid: 73b32c4a025cc2a49aa8a1f78f910d04, type: 3}
+  - {fileID: 2133130463188055992, guid: 680f9d289be0bf74ca6d370ef54455cf, type: 3}
+  - {fileID: 2768988662326563850, guid: ead46864b0e6c0c479355f156efbe8e4, type: 3}
+  - {fileID: 1381252632022246251, guid: c4a1ed50a5bb9634ba964890bf754cc1, type: 3}
   canMerge: 1
   restartWindow: {fileID: 1235747007}
 --- !u!4 &64614346
@@ -736,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 616711259}
   - component: {fileID: 616711258}
-  - component: {fileID: 616711257}
+  - component: {fileID: 616711260}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -744,26 +747,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &616711257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616711256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &616711258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,12 +771,42 @@ Transform:
   m_GameObject: {fileID: 616711256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: 5.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616711260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616711256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &698297818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,11 +1173,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1903103851
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e292144351615b04ba06d75376693f54, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.990566, g: 0.2476415, b: 0.2476415, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2201,8 +2214,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1347537504}
   - component: {fileID: 1347537505}
+  - component: {fileID: 1347537506}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2235,13 +2249,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eca0c4ebeb3f7c4ea5b9ad5368a9bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointer: {fileID: 1347537503}
-  PointerLine: {fileID: 1731809697}
-  nextFruit: 1
-  fruitObj: {fileID: 0}
-  fruitSetup: {fileID: 0}
-  spawnWidth: 1.47
+  nextFruitID: 0
+  fruit: {fileID: 0}
+  pointer: {fileID: 1731809697}
+  fruitTargetSpeed: 0.023
   core: {fileID: 64614345}
+  level: {fileID: 1347537506}
+--- !u!114 &1347537506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347537503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab2998580907f443b6770f5c9781699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWidth: 1.47
   borderLeft: {fileID: 698297821}
   borderRight: {fileID: 1337187295}
 --- !u!1 &1424922259

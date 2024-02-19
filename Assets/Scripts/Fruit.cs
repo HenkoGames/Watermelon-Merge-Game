@@ -5,20 +5,21 @@ using UnityEngine.Events;
 
 public class Fruit : MonoBehaviour
 {
-    public Sprite image;
     public int level;
     public GameObject nextLevel;
     private Collider2D col;
+    [HideInInspector]
     public Rigidbody2D rg;
     public UnityEvent WhenDouble;
     [Space]
-    public bool canDouble = true;
+    public bool canDouble = false;
     public bool dropped = false;
     public bool hadContact = false;
     public bool canGetOut = true;
     [Space]
     public int scoreForUnite;
     public float addStartTorque;
+    public float secondsToUnite = 0.3f;
     private void Awake()
     {
         try
@@ -47,28 +48,32 @@ public class Fruit : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hadContact = true;
+        
         if (collision.gameObject.TryGetComponent<Fruit>(out Fruit f)) 
         {
             
-            if(f.level == level && canDouble)
+            if(f.level == level && canDouble && f.canDouble)
             {
                 canDouble = false;
                 f.canDouble = false;
-                WhenDouble.Invoke();
-
-
+               
                 canGetOut = false;
                 f.canGetOut = false;
 
+                WhenDouble.Invoke();
 
-                Instantiate
+                if (nextLevel != null)
+                {
+                    GameObject nextF = Instantiate
                     (
-                    nextLevel, 
-                    Vector3.Lerp(transform.position, 
-                    collision.transform.position, 0.5f), 
-                    Quaternion.identity, 
+                    nextLevel,
+                    Vector3.Lerp(transform.position,
+                    collision.transform.position, 0.5f),
+                    Quaternion.identity,
                     transform.parent
                     );
+                }
+
                 Core.score += scoreForUnite;
                 Destroy(collision.gameObject);
                 Destroy(gameObject);

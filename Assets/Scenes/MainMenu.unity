@@ -159,11 +159,13 @@ MonoBehaviour:
   - {fileID: 534573438}
   - {fileID: 814658400}
   min: 0.2
-  max: 2
+  max: 1
   Fruits:
-  - {fileID: 5748775937963596998, guid: 13fc421f3b3370b498082b9321ab01d8, type: 3}
-  - {fileID: 4956075791501642355, guid: 79de6bb6d4e207b458c5c7727b1fed7e, type: 3}
-  - {fileID: 4350708257911751088, guid: d0271856f4ff4d84cbdf77be8bd85986, type: 3}
+  - {fileID: 1641550745885298480, guid: ce1e07f37abfce742812827027dc53ec, type: 3}
+  - {fileID: 5067725939334120130, guid: edefe393c18c79e49a8169c7e4a2518d, type: 3}
+  - {fileID: 9175884719704517893, guid: 85aae2ce00630f246a7a26e4ebacf514, type: 3}
+  - {fileID: 7033522750244060586, guid: 6f8685be357e12641913633ea3af5583, type: 3}
+  - {fileID: 6125468931650144265, guid: 7c7cf2c29f1cf524cbd0bdc98abe93e0, type: 3}
 --- !u!4 &265156670
 Transform:
   m_ObjectHideFlags: 0
@@ -844,7 +846,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1903103851
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1398241826
