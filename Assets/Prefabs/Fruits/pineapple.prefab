@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6424185072933936303}
   - component: {fileID: 6752875737345260024}
   - component: {fileID: 1425108535754169114}
+  - component: {fileID: 4799599405709900930}
   m_Layer: 0
   m_Name: pineapple
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 2768988662326563850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.223, y: 0.479, z: 0}
-  m_LocalScale: {x: 1.9688458, y: 1.9688458, z: 1.9688458}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6260698, y: 1.6260698, z: 1.6260698}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,9 +113,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6097384589800601947
 CircleCollider2D:
@@ -146,7 +147,7 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.020099176}
   serializedVersion: 2
@@ -181,7 +182,7 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.0047710156, y: -0.20246454}
   serializedVersion: 2
@@ -216,7 +217,7 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.13465953}
   serializedVersion: 2
@@ -246,4 +247,24 @@ MonoBehaviour:
   scoreForUnite: 100
   addStartTorque: 0.7
   secondsToUnite: 5
-  burst: {fileID: 2739988750031524795, guid: 6d8ed25546c62114a934a14ef27453da, type: 3}
+  sound: {fileID: 401198971112481459, guid: f591cb9945e7a284ea049aabfdf78655, type: 3}
+--- !u!250 &4799599405709900930
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768988662326563850}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceMagnitude: 1
+  m_ForceVariation: 0
+  m_DistanceScale: 0.9
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0

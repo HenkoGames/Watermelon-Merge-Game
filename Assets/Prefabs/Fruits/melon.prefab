@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3727481153047620173}
   - component: {fileID: 889673314445450606}
   - component: {fileID: 359687343040464524}
+  - component: {fileID: 683186713969017566}
   m_Layer: 0
   m_Name: melon
   m_TagString: Untagged
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 1381252632022246251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.682, y: 0.54, z: 0}
-  m_LocalScale: {x: 2.69505, y: 2.69505, z: 2.69505}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9239963, y: 1.9239963, z: 1.9239963}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,9 +111,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &889673314445450606
 MonoBehaviour:
@@ -131,7 +132,19 @@ MonoBehaviour:
   rg: {fileID: 0}
   WhenDouble:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889673314445450606}
+        m_TargetAssemblyTypeName: Fruit, Assembly-CSharp
+        m_MethodName: FinalFruitActions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   canDouble: 1
   dropped: 0
   hadContact: 0
@@ -139,7 +152,7 @@ MonoBehaviour:
   scoreForUnite: 500
   addStartTorque: 2
   secondsToUnite: 5
-  burst: {fileID: 2739988750031524795, guid: 6d8ed25546c62114a934a14ef27453da, type: 3}
+  sound: {fileID: 401198971112481459, guid: f591cb9945e7a284ea049aabfdf78655, type: 3}
 --- !u!58 &359687343040464524
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,8 +183,28 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.016413378, y: -0.08617022}
   serializedVersion: 2
   m_Radius: 0.42058092
+--- !u!250 &683186713969017566
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381252632022246251}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceMagnitude: 1
+  m_ForceVariation: 0
+  m_DistanceScale: 0.9
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0

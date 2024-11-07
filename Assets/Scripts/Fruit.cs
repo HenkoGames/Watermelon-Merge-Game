@@ -48,7 +48,6 @@ public class Fruit : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hadContact = true;
-        
         if (collision.gameObject.TryGetComponent<Fruit>(out Fruit f)) 
         {
             
@@ -60,8 +59,7 @@ public class Fruit : MonoBehaviour
                 canGetOut = false;
                 f.canGetOut = false;
 
-                WhenDouble.Invoke();
-
+                
                 if (nextLevel != null)
                 {
                     GameObject nextF = Instantiate
@@ -72,12 +70,28 @@ public class Fruit : MonoBehaviour
                     Quaternion.identity,
                     transform.parent
                     );
+                    Core.activeFruits.Add(nextF.GetComponent<Fruit>());
+
                 }
+                WhenDouble.Invoke();
 
                 Core.score += scoreForUnite;
+                SoundManager.instance.PlaySound(SoundManager.Sound.pop);
+                Core.activeFruits.Remove(f);
+                Core.activeFruits.Remove(this);
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
         }
+    }
+    public void DestroyWithVFX()
+    {
+        SoundManager.instance.PlaySound(SoundManager.Sound.pop);
+        Core.score += scoreForUnite;
+        Destroy(gameObject);
+    }
+    public void FinalFruitActions()
+    {
+        Core.instance.ClearFruits();
     }
 }

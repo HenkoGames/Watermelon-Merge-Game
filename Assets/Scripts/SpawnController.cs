@@ -13,8 +13,10 @@ public class SpawnController : MonoBehaviour
     [Space]
     public Core core; 
     public LevelSettings level;
-
-    
+    [Space]
+    [Space]
+    public int safeZoneFromTop;
+    public bool spawnFruits = true;
     public void Awake()
     {
         HidePointer();
@@ -25,32 +27,52 @@ public class SpawnController : MonoBehaviour
         pointer.transform.position = Vector3.up * (transform.position.y - (pointer.transform.localScale.y / 2));
 
     }
-
+    public void SetTouchProcessing(bool state)
+    {
+        spawnFruits = state;
+    }
 
     void Update()
     {
-        if(Input.touchCount > 0 && core.canMerge && fruit != null)
+        if(Input.touchCount > 0 && core.canMerge && fruit != null && spawnFruits)
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended )
+            ProcessTouch();
+        }
+        else if(level.borderLeft.status || level.borderRight.status)
+        {
+            level.borderLeft.HideSmooth(1000f);
+            level.borderRight.HideSmooth(1000f);
+        }
+    }
+    
+    public void ProcessTouch()
+    {
+        Touch touch = Input.GetTouch(0);
+        if (touch.position.y < Screen.height - safeZoneFromTop)
+        {
+            if (touch.phase == TouchPhase.Ended)
             {
                 DropChangeFruit();
             }
-            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary )
+            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
-                MoveFruit(touch);
+                MoveFruitWithPointer(touch);
             }
-          
+        }
+        else
+        {
+            MoveFruitToPosition(0);
+            HidePointer();
         }
     }
-    public void MoveFruit(Touch target)
+    private void MoveFruitWithPointer(Touch target)
     {
         MoveFruitToPosition(TouchConvert(target).x);
         ShowPointer();
         ChangePointerPosition();
 
     }
-    public void MoveFruitToPosition(float x)
+    private void MoveFruitToPosition(float x)
     {
         Vector3 target = Vector3.zero;
         target.y = transform.position.y;
@@ -78,7 +100,7 @@ public class SpawnController : MonoBehaviour
         }
 
     }
-    public void ChangePointerPosition()
+    private void ChangePointerPosition()
     {
         Vector3 vec = Vector3.zero;
         vec.y = pointer.transform.position.y;
@@ -88,25 +110,27 @@ public class SpawnController : MonoBehaviour
     }
     public void DropChangeFruit()
     {
-        level.borderLeft.HideSmooth(0.5f);
-        level.borderRight.HideSmooth(0.5f);
+
         HidePointer();
         DropFruit();
 
         SpawnFruit();
     }
-    public void DropFruit()
+    private void DropFruit()
     {
+        Core.activeFruits.Add(fruitSetup);
         fruitSetup.dropped = true;
         fruitSetup.rg.bodyType = RigidbodyType2D.Dynamic;
         fruit = null;
         fruitSetup = null;
+        level.borderLeft.HideSmooth(1000f);
+        level.borderRight.HideSmooth(1000f);
     }
-    public void SpawnFruit()
+    private void SpawnFruit()
     {
         StartCoroutine(SpawnFruitDelay());
     }
-    public void SpawnFruitNoDelay()
+    private void SpawnFruitNoDelay()
     {
         Core.fruits++;
         fruit = Instantiate(core.Fruits[nextFruitID], transform.position, Quaternion.identity, transform.parent);//Set to random

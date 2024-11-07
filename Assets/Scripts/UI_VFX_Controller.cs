@@ -12,6 +12,7 @@ public class UI_VFX_Controller : MonoBehaviour
     public SpriteRenderer _renderer;
     public bool activeHiding = false;
     public bool activeShowing = false;
+    public bool status;
 
 
     private void Start()
@@ -49,7 +50,7 @@ public class UI_VFX_Controller : MonoBehaviour
             yield return new WaitForSeconds(time/100);
         }
         activeHiding = false;
-
+        status = false;
     }
     IEnumerator ShowSmoothCor(float time)
     {
@@ -63,6 +64,7 @@ public class UI_VFX_Controller : MonoBehaviour
             yield return new WaitForSeconds(time / 100);
         }
         activeShowing = false;
+        status = true;
 
     }
 }

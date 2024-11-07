@@ -110,9 +110,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &5625869245862732114
 CircleCollider2D:
@@ -174,4 +174,4 @@ MonoBehaviour:
   scoreForUnite: 50
   addStartTorque: 0.5
   secondsToUnite: 5
-  burst: {fileID: 2739988750031524795, guid: 6d8ed25546c62114a934a14ef27453da, type: 3}
+  sound: {fileID: 401198971112481459, guid: f591cb9945e7a284ea049aabfdf78655, type: 3}
